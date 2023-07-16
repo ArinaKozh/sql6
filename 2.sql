@@ -1,0 +1,16 @@
+
+DELIMITER $$
+CREATE FUNCTION even()
+RETURNS VARCHAR(20)
+DETERMINISTIC
+BEGIN
+DECLARE i INT DEFAULT 0;
+DECLARE result VARCHAR(20);
+SET result='';
+WHILE i < 10 DO
+SET i = i + 2;
+SET result = CONCAT(result, ' ', i);
+END while;
+RETURN result;
+END $$;
+DELIMITER ;
